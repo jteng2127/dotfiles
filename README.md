@@ -8,7 +8,14 @@ and install module you want by
 
 ```bash
 cd ~/.dotfiles
-stow <module name>
+stow --no-folding <module name>
 ```
 
 all modules are folder names in `~/.dotfiles`
+
+## Uninstall
+
+```bash
+cd ~/.dotfiles
+stow -D <module name>
+```
