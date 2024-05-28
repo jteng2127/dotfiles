@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# MacOS brew environment
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -67,7 +70,3 @@ alias ls='ls --color'
 
 # Shell integrations
 eval "$(fzf --zsh)"
-
-# PATH
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
