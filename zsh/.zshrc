@@ -32,8 +32,6 @@ zinit snippet OMZP::git
 # Load completions
 autoload -Uz compinit && compinit
 
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -69,3 +67,7 @@ alias ls='ls --color'
 
 # Shell integrations
 eval "$(fzf --zsh)"
+
+# PATH
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
