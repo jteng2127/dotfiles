@@ -2,8 +2,26 @@
 
 ## Install
 
-clone this repo into `~/.dotfiles` ~~or other place you want~~
+clone this repo into `~/.dotfiles`
+
+```bash
+git clone git@github.com:jteng2127/dotfiles.git
+```
+
 install stow
+
+on Ubuntu
+
+```bash
+sudo apt-get install -y stow
+```
+
+on MacOS
+
+```bash
+brew install stow
+```
+
 and install module you want by
 
 ```bash
