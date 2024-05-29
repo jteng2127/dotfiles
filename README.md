@@ -13,9 +13,8 @@ setup script
 ```bash
 chmod -R +x ~/.dotfiles/scripts
 cd ~/.dotfiles/scripts/<your-package-manager>
-./setup.sh
-# if you need to install nerd font
-./font.sh
+./setup.sh # you may need to input your password
+./font.sh # if you need to install nerd font
 ```
 
 and install module(folder name) you want by
