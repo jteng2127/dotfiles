@@ -11,6 +11,7 @@ git clone https://github.com/jteng2127/dotfiles.git ~/.dotfiles
 setup script
 
 ```bash
+chmod -R +x ~/.dotfiles/scripts
 cd ~/.dotfiles/scripts/<your-package-manager>
 ./setup.sh
 # if you need to install nerd font
