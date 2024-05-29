@@ -2,10 +2,10 @@
 
 ## Install
 
-clone this repo into `~/.dotfiles`
+Install git, and clone this repo into `~/.dotfiles`
 
 ```bash
-git clone git@github.com:jteng2127/dotfiles.git
+git clone git@github.com:jteng2127/dotfiles.git ~/.dotfiles
 ```
 
 setup script
