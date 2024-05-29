@@ -39,6 +39,7 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light djui/alias-tips # Show configured alias when using full command
+zinit light zshzoo/cd-ls # cd followed by ls
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -69,6 +70,9 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+# Auto cd
+setopt auto_cd
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
