@@ -5,7 +5,7 @@
 Install git, and clone this repo into `~/.dotfiles`
 
 ```bash
-git clone git@github.com:jteng2127/dotfiles.git ~/.dotfiles
+git clone https://github.com/jteng2127/dotfiles.git ~/.dotfiles
 ```
 
 setup script
