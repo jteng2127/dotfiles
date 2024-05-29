@@ -11,7 +11,12 @@ if [ -d "/opt/homebrew/bin/brew" ]; then
 fi
 
 # Path
-export PATH=~/.local/bin:$PATH
+if [[ ! "$PATH" == *$HOME/.local/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$HOME/.local/bin"
+fi
+if [[ ! "$PATH" == *$HOME/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$HOME/.fzf/bin"
+fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
