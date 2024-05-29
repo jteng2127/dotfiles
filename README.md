@@ -8,28 +8,21 @@ clone this repo into `~/.dotfiles`
 git clone git@github.com:jteng2127/dotfiles.git
 ```
 
-install stow
-
-on Ubuntu
+setup script
 
 ```bash
-sudo apt-get install -y stow
+cd ~/.dotfiles/scripts/<your-package-manager>
+./setup.sh
+# if you need to install nerd font
+./font.sh
 ```
 
-on MacOS
-
-```bash
-brew install stow
-```
-
-and install module you want by
+and install module(folder name) you want by
 
 ```bash
 cd ~/.dotfiles
 stow --no-folding <module name>
 ```
-
-all modules are folder names in `~/.dotfiles`
 
 ## Uninstall
 
