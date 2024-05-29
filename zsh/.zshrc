@@ -46,7 +46,7 @@ zinit cdreplay -q
 bindkey -v
 bindkey ^f autosuggest-accept
 bindkey ^p history-search-backward
-bindkey ^n history-search-backward
+bindkey ^n history-search-forward
 
 # History
 HISTSIZE=5000
@@ -76,4 +76,4 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Path
-export PATH="~/.local/bin:$PATH"
+export PATH=~/.local/bin:$PATH
