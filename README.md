@@ -11,10 +11,12 @@ git clone https://github.com/jteng2127/dotfiles.git ~/.dotfiles
 setup script
 
 ```bash
-chmod -R +x ~/.dotfiles/scripts
 cd ~/.dotfiles/scripts/<your-package-manager>
-./setup.sh # you may need to input your password
-./font.sh # if you need to install nerd font
+./setup.sh
+# you may need to input your password
+
+# if you need to install nerd font
+./font.sh
 ```
 
 and install module(folder name) you want by
