@@ -28,6 +28,9 @@ stow --no-folding zsh
 cd ~/.dotfiles
 stow --no-folding miniconda
 ./scripts/miniconda/setup-macos-arm64.sh
+
+# install mps-pytorch (for macos silicon)
+./scripts/miniconda/install-mps-pytorch.sh
 ```
 
 ## Uninstall
