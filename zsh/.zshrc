@@ -84,6 +84,12 @@ alias ls='ls --color'
 alias gla='glola'
 alias gsm='git submodule'
 alias gsmf='git submodule foreach'
+alias git='LANG=en_US git' # always use English output
+
+# Other zsh config
+for config_file ($HOME/.zshrc_*); do
+  [[ -r "$config_file" ]] && source "$config_file"
+done
 
 # Shell integrations
 eval "$(fzf --zsh)"
