@@ -8,22 +8,18 @@ Install git, and clone this repo into `~/.dotfiles`
 git clone https://github.com/jteng2127/dotfiles.git ~/.dotfiles
 ```
 
-setup script
+scripts only support brew now
 
-```bash
-cd ~/.dotfiles/scripts/<your-package-manager>
-./setup.sh
-# you may need to input your password
-
-# if you need to install nerd font
-./font.sh
-```
-
-and install module(folder name) you want by
+### zsh
 
 ```bash
 cd ~/.dotfiles
-stow --no-folding <module name>
+stow --no-folding zsh
+./scripts/zsh/setup-brew.sh
+# you may need to input your password
+
+# if you need to install nerd font
+./scripts/zsh/setup_nerd_font.sh
 ```
 
 ## Uninstall
