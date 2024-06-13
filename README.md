@@ -22,6 +22,14 @@ stow --no-folding zsh
 ./scripts/zsh/setup_nerd_font.sh
 ```
 
+### miniconda
+
+```bash
+cd ~/.dotfiles
+stow --no-folding miniconda
+./scripts/miniconda/setup-macos-arm64.sh
+```
+
 ## Uninstall
 
 ```bash
