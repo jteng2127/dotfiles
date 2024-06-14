@@ -6,7 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # brew environment
-test -d $(brew --prefix) && eval "$($(brew --prefix)/bin/brew shellenv)"
+
+if [ -d "/opt/homebrew/bin" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -d "/usr/local/bin" ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+elif [ -d "/home/linuxbrew/.linuxbrew" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # Path
 if [[ ! "$PATH" == *$HOME/.local/bin* ]]; then
