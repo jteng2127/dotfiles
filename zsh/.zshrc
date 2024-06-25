@@ -7,11 +7,11 @@ fi
 
 # brew environment
 
-if [ -d "/opt/homebrew/bin" ]; then
+if [ -f "/opt/homebrew/bin/brew" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [ -d "/usr/local/bin" ]; then
+elif [ -f "/usr/local/bin/brew" ]; then
   eval "$(/usr/local/bin/brew shellenv)"
-elif [ -d "/home/linuxbrew/.linuxbrew" ]; then
+elif [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
@@ -94,9 +94,11 @@ alias gsmf='git submodule foreach'
 alias git='LANG=en_US git' # always use English output
 
 # Other zsh config
-for config_file ($HOME/.zshrc_*); do
-  [[ -r "$config_file" ]] && source "$config_file"
-done
+if compgen -G "${HOME}/.zshrc_*" > /dev/null; then
+  for config_file ($HOME/.zshrc_*); do
+    [[ -r "$config_file" ]] && source "$config_file"
+  done
+fi
 
 # Shell integrations
 eval "$(fzf --zsh)"
