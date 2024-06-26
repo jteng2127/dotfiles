@@ -97,11 +97,10 @@ alias gsmf='git submodule foreach'
 alias git='LANG=en_US git' # always use English output
 
 # Other zsh config
-if compgen -G "${HOME}/.zshrc_*" > /dev/null; then
-  for config_file ($HOME/.zshrc_*); do
-    [[ -r "$config_file" ]] && source "$config_file"
-  done
-fi
+for config_file ($HOME/.zshrc_*(N)); do
+  [[ -e "$config_file" ]] && source "$config_file"
+done
+
 
 # Shell integrations
 eval "$(fzf --zsh)"
