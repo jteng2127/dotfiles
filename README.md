@@ -14,9 +14,12 @@ scripts only support brew now
 
 ```bash
 cd ~/.dotfiles
-stow --no-folding zsh
 ./scripts/zsh/setup-brew.sh
 # you may need to input your password
+stow --no-folding zsh
+
+# open zsh to continue install plugins
+zsh
 
 # if you need to install nerd font
 ./scripts/zsh/setup_nerd_font.sh
