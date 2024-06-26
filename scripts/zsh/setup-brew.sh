@@ -19,3 +19,6 @@ fi
 
 # for `zsh` module
 brew install stow fzf zoxide
+
+# add locale
+sudo locale-gen en_US.UTF-8
