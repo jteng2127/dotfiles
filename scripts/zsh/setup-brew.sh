@@ -8,6 +8,15 @@ else
   PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
+# brew environment
+if [ -f "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f "/usr/local/bin/brew" ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+elif [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # zsh is already installed on macOS
 if command -v zsh > /dev/null 2>&1; then
   echo "zsh is already installed"
