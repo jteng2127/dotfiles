@@ -49,6 +49,7 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light Aloxaf/fzf-tab
 zinit light djui/alias-tips # Show configured alias when using full command
 zinit light zshzoo/cd-ls # cd followed by ls
+zinit light momo-lab/zsh-replace-multiple-dots # replace ... to ../..
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -68,6 +69,7 @@ bindkey -v
 bindkey ^f autosuggest-accept
 bindkey ^p history-substring-search-up
 bindkey ^n history-substring-search-down
+bindkey "." replace_multiple_dots
 
 # History
 HISTSIZE=5000
