@@ -100,6 +100,7 @@ alias gla='glola'
 alias gsm='git submodule'
 alias gsmf='git submodule foreach'
 alias git='LANG=en_US git' # always use English output
+alias nv=nvim
 
 # Other zsh config
 for config_file ($HOME/.zshrc_*(N)); do
