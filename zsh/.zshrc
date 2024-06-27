@@ -51,6 +51,7 @@ zinit light zshzoo/cd-ls # cd followed by ls
 
 # Add in snippets
 zinit snippet OMZP::git
+zinit snippet OMZP::common-aliases
 zinit snippet ${HOME}/.zsh-snippets/expandalias.zsh
 
 # Load completions
