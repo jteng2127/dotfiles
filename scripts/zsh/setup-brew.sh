@@ -31,3 +31,9 @@ brew install stow fzf zoxide
 
 # add locale
 sudo locale-gen en_US.UTF-8
+
+# optional tools
+brew install tree # displays the directory structure of a given path in a tree-like format
+brew install tldr # provides simplified summaries of commands.
+brew install htop # displays an interactive process viewer.
+brew install jq # parses and manipulates JSON data.
