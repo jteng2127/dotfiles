@@ -37,3 +37,4 @@ brew install tree # displays the directory structure of a given path in a tree-l
 brew install tldr # provides simplified summaries of commands.
 brew install htop # displays an interactive process viewer.
 brew install jq # parses and manipulates JSON data.
+brew install tmux # manages multiple terminal sessions
