@@ -51,6 +51,7 @@ zinit light zshzoo/cd-ls # cd followed by ls
 
 # Add in snippets
 zinit snippet OMZP::git
+zinit snippet ${HOME}/.zsh-snippets/expandalias.zsh
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -100,7 +101,6 @@ alias git='LANG=en_US git' # always use English output
 for config_file ($HOME/.zshrc_*(N)); do
   [[ -e "$config_file" ]] && source "$config_file"
 done
-
 
 # Shell integrations
 eval "$(fzf --zsh)"
