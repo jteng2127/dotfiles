@@ -45,6 +45,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-history-substring-search
 zinit light Aloxaf/fzf-tab
 zinit light djui/alias-tips # Show configured alias when using full command
 zinit light zshzoo/cd-ls # cd followed by ls
@@ -65,8 +66,8 @@ zinit cdreplay -q
 # Keybindings
 bindkey -v
 bindkey ^f autosuggest-accept
-bindkey ^p history-search-backward
-bindkey ^n history-search-forward
+bindkey ^p history-substring-search-up
+bindkey ^n history-substring-search-down
 
 # History
 HISTSIZE=5000
@@ -74,7 +75,7 @@ HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
-setopt sharehistory
+setopt sharehistory # share history among all shell session
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
