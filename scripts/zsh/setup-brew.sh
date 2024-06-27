@@ -38,3 +38,4 @@ brew install tldr # provides simplified summaries of commands.
 brew install htop # displays an interactive process viewer.
 brew install jq # parses and manipulates JSON data.
 brew install tmux # manages multiple terminal sessions
+brew install fd # better than find
