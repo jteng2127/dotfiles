@@ -77,7 +77,7 @@ setopt hist_find_no_dups
 setopt auto_cd
 
 # Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
@@ -674,3 +674,4 @@ function chpwd_cdls() {
 setopt AUTO_MENU
 setopt MENU_COMPLETE
 zstyle ':completion:*' menu select=1
+
