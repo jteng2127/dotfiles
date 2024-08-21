@@ -56,8 +56,11 @@ autoload -Uz compinit && compinit
 # Keybindings
 bindkey -v
 bindkey ^f autosuggest-accept
-bindkey ^p history-substring-search-up
-bindkey ^n history-substring-search-down
+bindkey ^r history-incremental-search-backward
+bindkey ^p history-search-backward
+bindkey ^n history-search-forward
+# bindkey ^p history-substring-search-up
+# bindkey ^n history-substring-search-down
 bindkey "." replace_multiple_dots
 
 # History
@@ -86,10 +89,15 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias gla='glola'
+alias gld='glod'
+alias glaa='glgga'
 alias gsm='git submodule'
 alias gsmf='git submodule foreach'
 alias git='LANG=en_US git' # always use English output
 alias nv=nvim
+
+# for omzp lib git
+autoload -U add-zsh-hook
 
 # Other zsh config
 for config_file ($HOME/.zshrc_*(N)); do
@@ -97,7 +105,7 @@ for config_file ($HOME/.zshrc_*(N)); do
 done
 
 # Shell integrations
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
 # eval "$(zoxide init --cmd cd zsh)"
 
 # ---
@@ -175,13 +183,19 @@ alias dud='du -d 1 -h'
 alias ff='find . -type f -name'
 
 alias h='history'
+# alias hr='history | tac | awk '{print sprintf(\"%7d\", NR*-1 - 1) \"  \" substr(\$0, 8)}' | tac"
+alias hr='history | tac | awk '{print sprintf(\"%5d\", NR*-1 - 1) \"  \"\$0}' | tac"
+alias h0='history 0'
+alias hr0="history 0 | tac | awk '{print sprintf(\"%5d\", NR*-1 - 1) \"  \" \$0}' | tac"
+alias hG='history 0 | grep'
+alias hrG="history 0 | tac | awk '{print sprintf(\"%5d\", NR*-1 - 1) \"  \" \$0}' | tac | grep"
 alias hgrep="fc -El 0 | grep"
 alias help='man'
 alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport='unset'
 
-alias rm='rm -i'
+# alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
@@ -675,3 +689,9 @@ setopt AUTO_MENU
 setopt MENU_COMPLETE
 zstyle ':completion:*' menu select=1
 
+# ---
+
+alias v=vim
+alias c=cat
+alias -g X="| xclip"
+alias python=python3
