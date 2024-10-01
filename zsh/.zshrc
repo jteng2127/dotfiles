@@ -48,7 +48,6 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
 zinit light Aloxaf/fzf-tab
-zinit light djui/alias-tips # Show configured alias when using full command
 zinit light zshzoo/cd-ls # cd followed by ls
 # bindkey "." has been removed when jeffreytse/zsh-vi-mode installed
 # so add this plugin after zvm init
