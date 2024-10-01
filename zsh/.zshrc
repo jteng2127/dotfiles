@@ -50,7 +50,11 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light Aloxaf/fzf-tab
 zinit light djui/alias-tips # Show configured alias when using full command
 zinit light zshzoo/cd-ls # cd followed by ls
-zinit light momo-lab/zsh-replace-multiple-dots # replace ... to ../..
+# bindkey "." has been removed when jeffreytse/zsh-vi-mode installed
+# so add this plugin after zvm init
+# ref: https://github.com/jeffreytse/zsh-vi-mode/issues/242#issuecomment-1721033298
+# improved solution: https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands
+zinit ice lucid wait ; zinit light momo-lab/zsh-replace-multiple-dots # replace ... to ../..
 
 # Add in snippets
 zinit snippet OMZP::git
