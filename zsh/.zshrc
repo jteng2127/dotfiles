@@ -102,6 +102,9 @@ alias gsm='git submodule'
 alias gsmf='git submodule foreach'
 alias git='LANG=en_US git' # always use English output
 alias nv=nvim
+alias v=nvim
+alias python=python3
+alias g++=g++-14
 
 # Other zsh config
 for config_file ($HOME/.zshrc_*(N)); do
@@ -117,3 +120,6 @@ function enter-insert-mode-after-command {
   zvm_select_vi_mode $ZVM_MODE_INSERT
 }
 zle -N zle-line-init enter-insert-mode-after-command
+
+# EDITOR
+export EDITOR='nvim'
