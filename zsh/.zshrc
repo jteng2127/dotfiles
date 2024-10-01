@@ -40,6 +40,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -65,7 +66,7 @@ zinit cdreplay -q
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Keybindings
-bindkey -v
+# bindkey -v
 bindkey ^f autosuggest-accept
 bindkey ^p history-substring-search-up
 bindkey ^n history-substring-search-down
@@ -110,3 +111,9 @@ done
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# always select insert mode when new command
+function enter-insert-mode-after-command {
+  zvm_select_vi_mode $ZVM_MODE_INSERT
+}
+zle -N zle-line-init enter-insert-mode-after-command
