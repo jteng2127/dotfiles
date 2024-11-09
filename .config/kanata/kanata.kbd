@@ -16,16 +16,16 @@ file while unmapping lctl and ralt from defsrc.
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  fn   lctl lmet lalt           spc            ralt rmet rctl
 )
 
 (deflayer qwerty
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  esc  🔅   🔆    nop0 nop1 nop2 nop3 ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cap @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  @cap a    s    d    f    g    h    j    k    l    ;   '    ret
+  lsft @z   @x   @c   @v   b    n   @m   @,   @.   @/    rsft
+  @fn  lctl lmet lalt           spc            ralt rmet rctl
 )
 
 (deflayer dvorak
@@ -34,34 +34,35 @@ file while unmapping lctl and ralt from defsrc.
   tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
   @cap a    o    e    u    i    d    h    t    n    s    -    ret
   lsft ;    q    j    k    x    b    m    w    v    z    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  @fn  lctl lmet lalt           spc            ralt rmet rctl
 )
 
 (defvar
   tap-time 150
-  hold-time 200
+  hold-time 150
 )
 
 (defalias
   ;; tap: backtick (grave), hold: toggle layer-switching layer while held
   grl (tap-hold $tap-time $hold-time grv (layer-toggle layers))
+  fn (tap-hold $tap-time $hold-time caps (layer-toggle layers))
 
   ;; layer-switch changes the base layer.
   dvk (layer-switch dvorak)
   qwr (layer-switch qwerty)
 
   ;; tap for esc, hold for lctl
-  cap (tap-hold $tap-time $hold-time esc lctl)
+  cap (tap-hold $tap-time 200 esc lctl)
 
   ;; home row modifiers
-  a (tap-hold $tap-time $hold-time a lsft)
-  s (tap-hold $tap-time $hold-time s lctl)
-  d (tap-hold $tap-time $hold-time d lalt)
-  f (tap-hold $tap-time $hold-time f lmet)
-  j (tap-hold $tap-time $hold-time j rmet)
-  k (tap-hold $tap-time $hold-time k ralt)
-  l (tap-hold $tap-time $hold-time l rctl)
-  ; (tap-hold $tap-time $hold-time ; rsft)
+  z (tap-hold $tap-time $hold-time z lsft)
+  x (tap-hold $tap-time $hold-time x lctl)
+  c (tap-hold $tap-time $hold-time c lalt)
+  v (tap-hold $tap-time $hold-time v lmet)
+  m (tap-hold $tap-time $hold-time m rmet)
+  , (tap-hold $tap-time $hold-time , ralt)
+  . (tap-hold $tap-time $hold-time . rctl)
+  / (tap-hold $tap-time $hold-time / rsft)
 )
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
@@ -70,10 +71,10 @@ file while unmapping lctl and ralt from defsrc.
 ;;
 ;; The keys 1 and 2 switch the base layer to qwerty and dvorak respectively.
 (deflayer layers
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   _    @qwr @dvk lrld _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _
+  _    _    _    _              _              _    _    _
 )
