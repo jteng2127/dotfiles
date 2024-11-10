@@ -23,7 +23,7 @@ file while unmapping lctl and ralt from defsrc.
   esc  🔅   🔆    nop0 nop1 nop2 nop3 ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cap a    s    d    f    g    h    j    k    l    ;   '    ret
+  @cap a    s    d    @f   g    h    j    k    l    ;   '    ret
   lsft @z   @x   @c   @v   b    n   @m   @,   @.   @/    rsft
   @fn  lctl lmet lalt           spc            ralt rmet rctl
 )
@@ -35,6 +35,29 @@ file while unmapping lctl and ralt from defsrc.
   @cap a    o    e    u    i    d    h    t    n    s    -    ret
   lsft ;    q    j    k    x    b    m    w    v    z    rsft
   @fn  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; The `lrld` action stands for "live reload". This will re-parse everything
+;; except for linux-dev, meaning you cannot live reload and switch keyboard
+;; devices.
+;;
+;; The keys 1 and 2 switch the base layer to qwerty and dvorak respectively.
+(deflayer layers
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  _    @qwr @dvk lrld _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _
+)
+
+(deflayer arrows
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    left down up   rght _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _
 )
 
 (defvar
@@ -63,18 +86,7 @@ file while unmapping lctl and ralt from defsrc.
   , (tap-hold $tap-time $hold-time , ralt)
   . (tap-hold $tap-time $hold-time . rctl)
   / (tap-hold $tap-time $hold-time / rsft)
-)
 
-;; The `lrld` action stands for "live reload". This will re-parse everything
-;; except for linux-dev, meaning you cannot live reload and switch keyboard
-;; devices.
-;;
-;; The keys 1 and 2 switch the base layer to qwerty and dvorak respectively.
-(deflayer layers
-  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  _    @qwr @dvk lrld _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _              _              _    _    _
+  ;; arrow toggle
+  f (tap-hold $tap-time $hold-time f (layer-toggle arrows))
 )
