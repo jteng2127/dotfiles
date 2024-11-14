@@ -15,17 +15,26 @@ file while unmapping lctl and ralt from defsrc.
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  fn   lctl lmet lalt           spc            ralt rmet rctl
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft      up
+  fn   lctl lmet lalt           spc            ralt rmet rctl left down rght
+)
+
+(deflayer qwerty_restricted
+  esc  🔅   🔆    nop0 nop1 nop2 nop3 ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
+  @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @cap @a   @s   @d   @f   @g   h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    @m   @,   @.   @/   rsft      nop0
+  @fn  nop4 nop5 nop6           spc            nop7 nop8 nop9 nop0 nop0 nop0
 )
 
 (deflayer qwerty
   esc  🔅   🔆    nop0 nop1 nop2 nop3 ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cap a    s    d    f    @g   h    j    k    l    ;    '    ret
-  lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/   rsft
-  @fn  nop4 nop5 nop6           spc            nop7 nop8 nop9
+  @cap @a   @s   @d   @f   @g   h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    @m   @,   @.   @/   rsft      up
+  @fn  lctl lmet lalt           spc            ralt rmet rctl left down rght
 )
 
 (deflayer dvorak
@@ -33,31 +42,29 @@ file while unmapping lctl and ralt from defsrc.
   @grl 1    2    3    4    5    6    7    8    9    0    [    ]    bspc
   tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
   @cap a    o    e    u    i    d    h    t    n    s    -    ret
-  lsft ;    q    j    k    x    b    m    w    v    z    rsft
-  @fn  lctl lmet lalt           spc            ralt rmet rctl
+  lsft ;    q    j    k    x    b    m    w    v    z    rsft      up
+  @fn  lctl lmet lalt           spc            ralt rmet rctl left down rght
 )
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
 ;; except for linux-dev, meaning you cannot live reload and switch keyboard
 ;; devices.
-;;
-;; The keys 1 and 2 switch the base layer to qwerty and dvorak respectively.
 (deflayer layers
   _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  _    @qwr @dvk lrld _    _    _    _    _    _    _    _    _    _
+  _    @qwr @qw  @dvk lrld _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _              _              _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _              _              _    _    _    _    _    _
 )
 
 (deflayer arrows
-  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    left down up   rght _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _              _              _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _              _              _    _    _    _    _    _
 )
 
 (defvar
@@ -71,17 +78,18 @@ file while unmapping lctl and ralt from defsrc.
   fn (tap-hold $tap-time $hold-time caps (layer-toggle layers))
 
   ;; layer-switch changes the base layer.
+  qwr (layer-switch qwerty_restricted)
+  qw (layer-switch qwerty)
   dvk (layer-switch dvorak)
-  qwr (layer-switch qwerty)
 
   ;; tap for esc, hold for lctl
   cap (tap-hold $tap-time 200 esc lctl)
 
   ;; home row modifiers
-  z (tap-hold $tap-time $hold-time z lsft)
-  x (tap-hold $tap-time $hold-time x lctl)
-  c (tap-hold $tap-time $hold-time c lalt)
-  v (tap-hold $tap-time $hold-time v lmet)
+  a (tap-hold $tap-time $hold-time a lsft)
+  s (tap-hold $tap-time $hold-time s lctl)
+  d (tap-hold $tap-time $hold-time d lalt)
+  f (tap-hold $tap-time $hold-time f lmet)
   m (tap-hold $tap-time $hold-time m rmet)
   , (tap-hold $tap-time $hold-time , ralt)
   . (tap-hold $tap-time $hold-time . rctl)
