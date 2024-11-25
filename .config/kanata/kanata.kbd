@@ -1,3 +1,4 @@
+;; ctrl+space+esc to reload!
 #|
 This configuration will process all keys pressed inside of kanata, even if
 they are not mapped in defsrc. This is so that certain actions can activate
@@ -25,7 +26,7 @@ file while unmapping lctl and ralt from defsrc.
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap @a   @s   @d   @f   @g   h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    @m   @,   @.   @/   rsft      nop0
-  @fn  nop4 nop5 nop6           spc            nop7 nop8 nop9 nop0 nop0 nop0
+  caps  nop4 nop5 nop6           spc            nop7 nop8 nop9 nop0 nop0 nop0
 )
 
 (deflayer qwerty
@@ -34,7 +35,7 @@ file while unmapping lctl and ralt from defsrc.
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap @a   @s   @d   @f   @g   h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    @m   @,   @.   @/   rsft      up
-  @fn  lctl lmet lalt           spc            ralt rmet rctl left down rght
+  caps  lctl lmet lalt           spc            ralt rmet rctl left down rght
 )
 
 (deflayer dvorak
@@ -43,7 +44,7 @@ file while unmapping lctl and ralt from defsrc.
   tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
   @cap a    o    e    u    i    d    h    t    n    s    -    ret
   lsft ;    q    j    k    x    b    m    w    v    z    rsft      up
-  @fn  lctl lmet lalt           spc            ralt rmet rctl left down rght
+  caps  lctl lmet lalt           spc            ralt rmet rctl left down rght
 )
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
